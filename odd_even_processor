@@ -1,0 +1,45 @@
+'''
+    This will print how many even and how many odd numbers
+    in a range given by a user.
+    No parameters needed.
+'''
+
+process = False
+while not process:
+
+    start = int(input("From what number would you like to process? "))
+    ends = int(input("Up to what number would you like to process? "))
+
+    even_count = 0
+    odd_count = 0
+
+    for num in range(start, ends + 1):
+        if num % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+
+
+    def even():
+        for nums in range(start, ends + 1):
+            if nums % 2 == 0:
+                print(nums, end=" ")
+
+
+    def odd():
+        for nums in range(start, ends + 1):
+            if nums % 2 != 0:
+                print(nums, end=" ")
+
+
+    print(f"There are {even_count} Even Numbers: ")
+    even()
+    print(f"\nThere are {odd_count} Odd Numbers: " )
+    odd()
+
+    new_process = input("\nProcess number again? (y/n): ")
+    if new_process == "y":
+        process = False
+    else:
+        print("Thank you!")
+        break
